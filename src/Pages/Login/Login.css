@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Ysabeau+SC&display=swap");
+
+.login {
+  border: 1px solid black;
+  border-radius: 15px;
+  
+}
+
+.login-outline {
+  text-align: center;
+  margin: 1cm;
+  display: flex;
+  flex-direction: column;
+}
+.wholepage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+.body {
+  font-family: "Ysabeau SC", sans-serif;
+  height: 100vh;
+  background: linear-gradient(120deg, #4285f4, #ffffff) !important;
+}
+.newaccount{
+  color: #252525;
+
+}
+.newaccount:hover{
+  cursor: pointer;
+   }
