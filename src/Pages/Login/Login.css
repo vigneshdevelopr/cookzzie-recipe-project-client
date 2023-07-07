@@ -1,33 +1,71 @@
 @import url("https://fonts.googleapis.com/css2?family=Ysabeau+SC&display=swap");
 
-.login {
-  border: 1px solid black;
-  border-radius: 15px;
+/* Styles for larger screens */
+@media only screen and (min-width: 768px) {
+  .body {
+    font-family: "Ysabeau SC", sans-serif;
+    height: 100vh;
+    background: linear-gradient(120deg, #4285f4, #ffffff) !important;
+    padding: 10px;
+    display: flex;
+    text-align: center;
+  }
+
+  #loginpng {
+    display: flex;
+    margin: 0 auto;
+    width: 60%;
+  }
+  #signuppng {
+    display: flex;
+    margin: 0 auto;
+    width: 50%;
+    height: 80%;
+  }
   
 }
 
-.login-outline {
-  text-align: center;
-  margin: 1cm;
+/* Styles for smaller screens */
+@media only screen and (max-width: 767px) {
+  .body {
+    font-family: "Ysabeau SC", sans-serif;
+    height: 100vh;
+    background: linear-gradient(120deg, #4285f4, #ffffff) !important;
+    padding: 10px;
+    display: flex;
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  #loginpng {
+    display: none !important;
+  }
+  #signuppng{
+    display: none !important;
+  }
+}
+
+.border-sec{
+  border: 2px solid black !important;
+  width: max-content !important;
   display: flex;
+  /* margin: 0 auto; */
+  text-align: center;
   flex-direction: column;
-}
-.wholepage {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
-}
-.body {
-  font-family: "Ysabeau SC", sans-serif;
-  height: 100vh;
-  background: linear-gradient(120deg, #4285f4, #ffffff) !important;
-}
-.newaccount{
-  color: #252525;
+  padding: 0 3cm;
+  border-radius: 10px;
+  
+  
 
 }
+
+
+#google:hover{
+cursor: pointer !important;
+}
+
 .newaccount:hover{
   cursor: pointer;
-   }
+}
+
+
