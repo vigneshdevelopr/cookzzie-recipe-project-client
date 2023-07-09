@@ -22,7 +22,6 @@
     width: 50%;
     height: 80%;
   }
-  
 }
 
 /* Styles for smaller screens */
@@ -40,32 +39,24 @@
   #loginpng {
     display: none !important;
   }
-  #signuppng{
+  #signuppng {
     display: none !important;
   }
 }
 
-.border-sec{
+.border-sec {
   border: 2px solid black !important;
-  width: max-content !important;
+  width: 100% !important;
   display: flex;
-  /* margin: 0 auto; */
   text-align: center;
   flex-direction: column;
-  padding: 0 3cm;
   border-radius: 10px;
-  
-  
-
 }
 
-
-#google:hover{
-cursor: pointer !important;
+#google:hover {
+  cursor: pointer !important;
 }
 
-.newaccount:hover{
+.newaccount:hover {
   cursor: pointer;
 }
-
-

@@ -5,6 +5,7 @@ import Signup from "./Pages/Signup/Signup";
 import Recipes from "./Pages/Recipes/Recipes";
 import SavedRecipes from "./Pages/Recipes/SavedRecipes";
 import CreateRecipe from "./Pages/Recipes/CreateRecipe";
+import LostPage from "./Pages/LostPage";
 
 function App() {
   return (
@@ -26,9 +27,9 @@ function App() {
         <Route path="/create">
           <CreateRecipe />
         </Route>
-        {/* <Route path="/nav">
-          <NavBar />
-        </Route> */}
+        <Route path="**">
+          <LostPage />
+        </Route>
       </Switch>
     </div>
   );

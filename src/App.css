@@ -1,0 +1,44 @@
+#LostPage {
+  width: 100vw;
+}
+.LostPageText {
+  text-align: center;
+}
+
+.navbuttons {
+  display: flex;
+  margin: 0 auto;
+}
+.nav-sec {
+  cursor: pointer;
+}
+.recipes {
+  border: 2px solid red;
+  height: max-content;
+  margin: 0 4.5cm;
+  margin-top: 1rem;
+  border-radius: 10px;
+  background-color: #f2f3f7;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem ;
+}
+.createRecipe{
+    border: 2px solid grey;
+    height: max-content;
+    width: 10cm;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #f2f3f7;
+    row-gap: 1rem ;
+
+    display: flex;
+    
+    flex-direction: column;
+}
+
+.createRecipeTitle{
+    font-size: xx-large;
+    font-weight: bold;
+}
+

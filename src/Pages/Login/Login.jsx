@@ -4,6 +4,7 @@ import { Button, Grid, TextField } from "@mui/material";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Base from "../../Components/Base";
 import LoginPng from "../../assets/Login.png";
+import { useCookies } from "react-cookie";
 
 function Login() {
   const history = useHistory();
@@ -11,6 +12,7 @@ function Login() {
     username: "",
     password: "",
   });
+  const [_, setCookies] = useCookies(["access_token"]);
   const { username, password } = values;
 
   //handleChange
@@ -35,10 +37,16 @@ function Login() {
           "content-type": "application/json",
         },
       });
+
       const data = await response.json();
       console.log(data);
       if (response.status === 200) {
-        alert(`Hey Buddy! Welcome Back, ${data.userID} `);
+        setCookies("access_token", data.token);
+        window.localStorage.setItem("access_token", data.token);
+        window.localStorage.setItem("userId", data.userID);
+        alert(`Hey Buddy! Welcome Back, ${data.user} `);
+
+        history.push("/recipes");
       } else if (response.status === 401) {
         alert(`Sorry! You Entered Invalid Credentials `);
       } else if (response.status === 404) {
