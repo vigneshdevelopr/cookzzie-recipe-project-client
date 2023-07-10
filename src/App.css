@@ -15,7 +15,7 @@
 .recipes {
   border: 2px solid red;
   height: max-content;
-  margin: 0 4.5cm;
+  /* margin: 0 4.5cm; */
   margin-top: 1rem;
   border-radius: 10px;
   background-color: #f2f3f7;
