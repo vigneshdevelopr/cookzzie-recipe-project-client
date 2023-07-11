@@ -41,4 +41,8 @@
     font-size: xx-large;
     font-weight: bold;
 }
+.card-sec{
+  display: grid;
+grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+}
 

@@ -41,9 +41,9 @@ export default function NavBar() {
           Cookzzie
           </Typography>
           <div className="navbuttons">
-            <Button color='inherit'>Home</Button>
+            <Button onClick={()=>history.push("/recipes")}  color='inherit'>Home</Button>
             <Button onClick={()=>history.push("/create")} color='inherit'>Create</Button>
-            <Button color='inherit'>Saved</Button>
+            <Button onClick={()=>history.push("/saved")}  color='inherit'>Saved</Button>
 
           </div>
           <div className="nav-sec">
