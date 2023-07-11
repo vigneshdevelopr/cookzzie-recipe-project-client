@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Login.css";
 import { Button, Grid, TextField } from "@mui/material";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import Base from "../../Components/Base";
 import LoginPng from "../../assets/Login.png";
 import { useCookies } from "react-cookie";
 
@@ -61,7 +60,6 @@ function Login() {
   };
 
   return (
-    <Base>
       <div className="body">
         <div id="loginpng">
           <img src={LoginPng} alt="login-png" />
@@ -119,7 +117,6 @@ function Login() {
           </div>
         </div>
       </div>
-    </Base>
   );
 }
 

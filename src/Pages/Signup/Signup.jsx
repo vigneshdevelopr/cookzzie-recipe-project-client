@@ -64,7 +64,6 @@ function Signup() {
   };
 
   return (
-    <Base>
       <div className="body">
         <div id="signuppng">
           <img src={SignupPng} alt="login-png" />
@@ -122,7 +121,6 @@ function Signup() {
           </div>
         </div>
       </div>
-    </Base>
   );
 }
 

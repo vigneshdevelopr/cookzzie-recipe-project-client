@@ -82,6 +82,7 @@ function Recipes() {
         userId,
       });
       //  setRecipes(response.data);
+      alert('Your Recipe has been Saved Successfully!');
       console.log(response);
     } catch (error) {
       console.log(error.message);
