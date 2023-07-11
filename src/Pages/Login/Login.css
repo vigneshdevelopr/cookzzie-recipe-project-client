@@ -22,6 +22,14 @@
     width: 50%;
     height: 80%;
   }
+  .border-sec {
+    /* border: 2px solid black !important; */
+    width: 100% !important;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 10px;
+  }
 }
 
 /* Styles for smaller screens */
@@ -42,16 +50,24 @@
   #signuppng {
     display: none !important;
   }
+  .border-sec {
+    border: 1px solid #252525 !important;
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: auto;
+  }
 }
 
-.border-sec {
+/* .border-sec {
   border: 2px solid black !important;
   width: 100% !important;
   display: flex;
   text-align: center;
   flex-direction: column;
   border-radius: 10px;
-}
+} */
 
 #google:hover {
   cursor: pointer !important;

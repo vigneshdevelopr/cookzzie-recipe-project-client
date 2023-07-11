@@ -75,7 +75,7 @@ function SavedRecipes() {
                   <MoreVertIcon />
                 </IconButton>
               }
-              title={recipe.foodname} // Use the correct property to display the recipe title
+              title={recipe.foodname} 
               subheader={recipe._id}
             />
             <CardMedia

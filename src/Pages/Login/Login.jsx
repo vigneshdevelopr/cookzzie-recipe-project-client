@@ -74,7 +74,7 @@ function Login() {
                 value={username}
                 name="username"
                 onChange={handleChange("username")}
-                label="Username"
+                label="Email"
                 variant="outlined"
               />
             </Grid>

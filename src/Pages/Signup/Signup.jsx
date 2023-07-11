@@ -78,7 +78,7 @@ function Signup() {
                 value={username}
                 onChange={handleChange("username")}
                 name="username"
-                label="Username"
+                label="Email"
                 variant="outlined"
               />
             </Grid>
