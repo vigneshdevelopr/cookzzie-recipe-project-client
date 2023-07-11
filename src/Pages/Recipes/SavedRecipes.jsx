@@ -20,16 +20,7 @@ import { useHistory } from "react-router-dom";
 import Base from "../../Components/Base";
 
 //card functionality
-// const ExpandMore = styled((props) => {
-//   const { expand, ...other } = props;
-//   return <IconButton {...other} />;
-// })(({ theme, expand }) => ({
-//   transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-//   marginLeft: 'auto',
-//   transition: theme.transitions.create('transform', {
-//     duration: theme.transitions.duration.shortest,
-//   }),
-// }));
+
 const userId = getUserbyId();
 
 function SavedRecipes() {
@@ -39,30 +30,15 @@ function SavedRecipes() {
   const[savedRecipes, setSavedRecipes] = useState([])
   const [expanded, setExpanded] = React.useState(false)
 
-  // const handleExpandClick = () => {
-  //   setExpanded(!expanded);
-  // };
 
-  //initially fetch the all the recipes:
   useEffect(() => {
-    // const fetchRecipe = async () => {
-    //   try {
-    //     const response = await axios.get("http://localhost:5000/recipes");
-    //     const getRecipes = response.data
-    //     setRecipes((prevRecipes) => [...prevRecipes, ...getRecipes]);
-
-    //     console.log(recipes);
-    //   } catch (error) {
-    //     console.log(error.message);
-    //   }
-    // };
-
-    //savedRecipe:
+   
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
           `https://cookzzieserver.vercel.app/recipes/savedRecipes/${userId}`
         );
+        console.log(userId);
         setSavedRecipes(response.data.savedRecipes);
         console.log(savedRecipes)
       } catch (err) {
@@ -73,20 +49,7 @@ function SavedRecipes() {
     fetchSavedRecipes();
   }, []);
 
-  // //savedRecipe:
-  // const savedRecipe = async (recipeId) => {
-  //   try {
-  //     const response = await axios.put("http://localhost:5000/recipes/saved", {
-  //       recipeId,
-  //       userId,
-  //     });
-  //     //  setRecipes(response.data);
-  //     console.log(response);
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
-
+ 
   return (
     <Base>
     <div className="card-sec">
