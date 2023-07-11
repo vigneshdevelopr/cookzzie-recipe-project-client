@@ -25,7 +25,7 @@ function Signup() {
         username,
         password,
       };
-      const response = await fetch("http://localhost:5000/users/signup", {
+      const response = await fetch("https://cookzzieserver.vercel.app/users/signup", {
         method: "POST",
         body: JSON.stringify(newData),
         headers: {

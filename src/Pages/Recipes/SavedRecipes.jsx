@@ -39,9 +39,9 @@ function SavedRecipes() {
   const[savedRecipes, setSavedRecipes] = useState([])
   const [expanded, setExpanded] = React.useState(false)
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  // const handleExpandClick = () => {
+  //   setExpanded(!expanded);
+  // };
 
   //initially fetch the all the recipes:
   useEffect(() => {
@@ -61,7 +61,7 @@ function SavedRecipes() {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/recipes/savedRecipes/${userId}`
+          `https://cookzzieserver.vercel.app/recipes/savedRecipes/${userId}`
         );
         setSavedRecipes(response.data.savedRecipes);
         console.log(savedRecipes)

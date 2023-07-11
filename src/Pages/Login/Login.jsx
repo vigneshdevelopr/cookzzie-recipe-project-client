@@ -30,7 +30,7 @@ function Login() {
       };
       //fetch:
 
-      const response = await fetch("http://localhost:5000/users/signin", {
+      const response = await fetch("https://cookzzieserver.vercel.app/users/signin", {
         method: "POST",
         body: JSON.stringify(newData),
         headers: {

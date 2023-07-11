@@ -47,7 +47,7 @@ function Recipes() {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/recipes");
+        const response = await axios.get("https://cookzzieserver.vercel.app/recipes");
         const getRecipes = response.data
         setRecipes((prevRecipes) => [...prevRecipes, ...getRecipes]);
 
@@ -61,7 +61,7 @@ function Recipes() {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/recipes/saved/id/${userId}`
+          `https://cookzzieserver.vercel.app/recipes/saved/id/${userId}`
         );
         setSavedRecipes(response.data.savedRecipes);
         console.log(savedRecipes)
@@ -77,7 +77,7 @@ function Recipes() {
   //savedRecipe:
   const savedRecipe = async (recipeId) => {
     try {
-      const response = await axios.put("http://localhost:5000/recipes/saved", {
+      const response = await axios.put("https://cookzzieserver.vercel.app/recipes/saved", {
         recipeId,
         userId,
       });
