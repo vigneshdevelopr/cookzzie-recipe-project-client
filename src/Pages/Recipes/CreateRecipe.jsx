@@ -151,7 +151,7 @@ function CreateRecipe() {
 
     try {
       await axios.post(
-        "https://cookzzieserver.vercel.app/recipes/create",
+        "https://cookzzie-server.onrender.com/recipes/create",
         recipe,
         {
           headers: { authorization: cookies.access_token },

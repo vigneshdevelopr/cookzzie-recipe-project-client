@@ -29,7 +29,7 @@ function Login() {
       };
       //fetch:
 
-      const response = await fetch("https://cookzzieserver.vercel.app/users/signin", {
+      const response = await fetch("https://cookzzie-server.onrender.com/users/signin", {
         method: "POST",
         body: JSON.stringify(newData),
         headers: {

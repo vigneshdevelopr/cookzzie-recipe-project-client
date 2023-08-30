@@ -30,7 +30,7 @@ function SavedRecipes() {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `https://cookzzieserver.vercel.app/recipes/saved/${userId}`
+          `https://cookzzie-server.onrender.com/recipes/saved/${userId}`
         );
         console.log(response.data); // Check the response data from the server
 
