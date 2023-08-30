@@ -104,7 +104,7 @@ function Login() {
               </p>
             </Grid>
           </Grid>
-          <div>
+          {/* <div>
             or <br />
             SignIn With Google <br />
             <img
@@ -114,7 +114,7 @@ function Login() {
               src="https://img.icons8.com/fluency/48/google-logo.png"
               alt="google-logo"
             />
-          </div>
+          </div> */}
         </div>
       </div>
   );

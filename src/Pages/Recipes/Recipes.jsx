@@ -106,8 +106,7 @@ function Recipes() {
               </IconButton>
             }
             title={recipe.foodname}
-            subheader="September 14, 2016"
-          />
+            subheader= {`Time Period to Cook: ${recipe.timePeriod}min`} />
           <CardMedia
             component="img"
             height="194"
@@ -115,19 +114,21 @@ function Recipes() {
             alt="Paella dish"
           />
           <CardContent>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body" style={{color:'black',fontSize:'larger',fontWeight:'500',display:'flex', justifyContent:'center'}}>
               {recipe.foodname}
             </Typography>
+            
           </CardContent>
           <CardActions disableSpacing>
             <div onClick={() => savedRecipe(recipe._id)}>
               <IconButton aria-label="add to favorites">
                 <FavoriteIcon />
+                <Typography variant="body2" style={{color:'grey',marginLeft:'2rem',textAlign:'justify'}} >
+            Click ❤️ to Save your recipe, and go to saved page to see the cooking methodology
+            </Typography>
               </IconButton>
             </div>
-            <IconButton aria-label="share">
-              <ShareIcon />
-            </IconButton>
+  
             {/* <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
