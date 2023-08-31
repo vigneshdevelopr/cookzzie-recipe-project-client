@@ -3,8 +3,10 @@ import { Button, Grid, TextField } from "@mui/material";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Base from "../../Components/Base";
 import SignupPng from "../../assets/Joinnow.png";
+import Loading from "../../Components/Spinner";
 
 function Signup() {
+  const[load,setLoad]=useState(false)
   const history = useHistory();
   const [values, setValues] = useState({
     username: "",
@@ -25,6 +27,7 @@ function Signup() {
         username,
         password,
       };
+      setLoad(true)
       const response = await fetch("https://cookzzie-server.onrender.com/users/signup", {
         method: "POST",
         body: JSON.stringify(newData),
@@ -50,6 +53,8 @@ function Signup() {
       console.log(values.name);
     } catch (error) {
       window.alert(error.message);
+    }finally{
+      setLoad(false)
     }
   };
 
@@ -65,6 +70,9 @@ function Signup() {
 
   return (
       <div className="body">
+        {load?(<Loading />):(
+<>
+       
         <div id="signuppng">
           <img src={SignupPng} alt="login-png" />
         </div>
@@ -120,6 +128,8 @@ function Signup() {
             />
           </div> */}
         </div>
+        </>
+         )}
       </div>
   );
 }

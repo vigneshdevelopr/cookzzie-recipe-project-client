@@ -4,6 +4,7 @@ import { Button, Grid, TextField } from "@mui/material";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import LoginPng from "../../assets/Login.png";
 import { useCookies } from "react-cookie";
+import Loading from "../../Components/Spinner";
 
 function Login() {
   const history = useHistory();
@@ -13,7 +14,7 @@ function Login() {
   });
   const [_, setCookies] = useCookies(["access_token"]);
   const { username, password } = values;
-
+const[load,setLoad]=useState(false)
   //handleChange
   const handleChange = (name) => (event) => {
     const value = event.target.value;
@@ -28,7 +29,7 @@ function Login() {
         password,
       };
       //fetch:
-
+setLoad(true)
       const response = await fetch("https://cookzzie-server.onrender.com/users/signin", {
         method: "POST",
         body: JSON.stringify(newData),
@@ -56,11 +57,18 @@ function Login() {
     } catch (error) {
       alert("Internal Server Error");
       console.log(error.message);
+    }finally{
+      setLoad(false)
     }
   };
 
   return (
       <div className="body">
+        {load?(<Loading />):(
+
+       
+        <>
+        
         <div id="loginpng">
           <img src={LoginPng} alt="login-png" />
         </div>
@@ -116,6 +124,8 @@ function Login() {
             />
           </div> */}
         </div>
+        </>
+         )}
       </div>
   );
 }
