@@ -18,6 +18,8 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { getUserbyId } from "../../Components/GetUserbyId";
 import { useHistory } from "react-router-dom";
 import Base from "../../Components/Base";
+import  Delete  from "@mui/icons-material/Delete";
+import { InfoRounded } from "@mui/icons-material";
 
 const userId = getUserbyId();
 
@@ -59,6 +61,32 @@ function SavedRecipes() {
     );
   };
 
+
+  const handleRemove = async(productId)=>{
+try {
+  const response = await axios.delete(
+    `https://cookzzie-server.onrender.com/recipes/savedRecipes/${userId}/${productId}`
+  );
+  setSavedRecipes((prevCart) => prevCart.filter((item) => item._id !== productId));
+  console.log(response);
+  alert("Your selected Recipe has been removed from Saved List");
+} catch (error) {
+  console.log(error);
+
+}
+  }
+
+
+  // const empty = () =>{
+  //   if(savedRecipes===[]){
+  //     return (
+  //       <h1 style={{display:'flex',justifyContent:'center',alignItems:'center',height:'100vh'}}>
+  //         Your Don't have any Saved Recipes, Go to Home and Save Your Favorite Recipe's
+  //       </h1>
+  //     )
+  //   }
+  // }
+
   return (
     <Base>
       <div className="card-sec">
@@ -67,16 +95,11 @@ function SavedRecipes() {
             <CardHeader
               avatar={
                 <Avatar sx={{ bgcolor: "darkgoldenrod" }} aria-label="recipe">
-                  R
+                  {recipe.foodname[0]}
                 </Avatar>
               }
-              action={
-                <IconButton aria-label="settings">
-                  <MoreVertIcon />
-                </IconButton>
-              }
+             
               title={recipe.foodname} 
-              subheader={recipe._id}
             />
             <CardMedia
               component="img"
@@ -97,14 +120,17 @@ function SavedRecipes() {
                 ))}
             </CardContent>
             <CardActions disableSpacing>
-              <IconButton aria-label="share">
-                <ShareIcon />
+              <IconButton aria-label="delete"  >
+                <div onClick={()=>handleRemove(recipe._id)}>
+
+                <Delete style={{color:'red'}} />
+                </div>
               </IconButton>
               <IconButton
                 aria-label="show more"
                 onClick={() => handleExpandClick(idx)}
               >
-                <ExpandMoreIcon />
+                <InfoRounded />
               </IconButton>
             </CardActions>
             <Collapse in={recipe.expanded} timeout="auto" unmountOnExit>
