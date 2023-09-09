@@ -100,7 +100,7 @@ function Recipes() {
                 {recipe.foodname[0]}
               </Avatar>
             }
-           
+          
             title={recipe.foodname}
             subheader= {`Time Period to Cook: ${recipe.timePeriod}min`} />
           <CardMedia
