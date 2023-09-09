@@ -90,11 +90,19 @@ try {
   return (
     <Base>
       <div className="card-sec">
-        {savedRecipes.map((recipe, idx) => (
+        {savedRecipes.length === 0 ? (
+          <div>
+            <h1>
+              You didn't saved any recipes.. Please go and save your favorite recipes on our homepage
+            </h1>
+          </div>
+        ):(
+          <div>
+{savedRecipes.map((recipe, idx) => (
           <Card key={idx} sx={{ maxWidth: 345 }}>
             <CardHeader
               avatar={
-                <Avatar sx={{ bgcolor: "darkgoldenrod" }} aria-label="recipe">
+                <Avatar sx={{ bgcolor: "lightblue",color:'#252525' }} aria-label="recipe">
                   {recipe.foodname[0]}
                 </Avatar>
               }
@@ -145,6 +153,9 @@ try {
             </Collapse>
           </Card>
         ))}
+          </div>
+        )}
+        
       </div>
     </Base>
   );

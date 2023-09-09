@@ -96,15 +96,11 @@ function Recipes() {
         <Card key={idx} sx={{ maxWidth: 345 }}>
           <CardHeader
             avatar={
-              <Avatar sx={{ bgcolor: "darkgoldenrod" }} aria-label="recipe">
-                R
+              <Avatar sx={{ bgcolor: "lightblue",color:'#252525' }} aria-label="recipe">
+                {recipe.foodname[0]}
               </Avatar>
             }
-            action={
-              <IconButton aria-label="settings">
-                <MoreVertIcon />
-              </IconButton>
-            }
+           
             title={recipe.foodname}
             subheader= {`Time Period to Cook: ${recipe.timePeriod}min`} />
           <CardMedia
