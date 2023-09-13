@@ -47,7 +47,7 @@ function Recipes() {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const response = await axios.get("https://cookzzie-server.onrender.com/recipes");
+        const response = await axios.get("https://cookzzie.up.railway.app/recipes");
         const getRecipes = response.data
         setRecipes((prevRecipes) => [...prevRecipes, ...getRecipes]);
 
@@ -61,7 +61,7 @@ function Recipes() {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `https://cookzzie-server.onrender.com/recipes/saved/id/${userId}`
+          `https://cookzzie.up.railway.app/recipes/saved/id/${userId}`
         );
         setSavedRecipes(response.data.savedRecipes);
         console.log(savedRecipes)
@@ -77,7 +77,7 @@ function Recipes() {
   //savedRecipe:
   const savedRecipe = async (recipeId) => {
     try {
-      const response = await axios.put("https://cookzzie-server.onrender.com/recipes/saved", {
+      const response = await axios.put("https://cookzzie.up.railway.app/recipes/saved", {
         recipeId,
         userId,
       });

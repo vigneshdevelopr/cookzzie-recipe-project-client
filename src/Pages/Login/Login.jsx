@@ -30,7 +30,7 @@ const[load,setLoad]=useState(false)
       };
       //fetch:
 setLoad(true)
-      const response = await fetch("https://cookzzie-server.onrender.com/users/signin", {
+      const response = await fetch("https://cookzzie.up.railway.app/users/signin", {
         method: "POST",
         body: JSON.stringify(newData),
         headers: {

@@ -151,7 +151,7 @@ function CreateRecipe() {
 
     try {
       await axios.post(
-        "https://cookzzie-server.onrender.com/recipes/create",
+        "https://cookzzie.up.railway.app/recipes/create",
         recipe,
         {
           headers: { authorization: cookies.access_token },

@@ -28,7 +28,7 @@ function Signup() {
         password,
       };
       setLoad(true)
-      const response = await fetch("https://cookzzie-server.onrender.com/users/signup", {
+      const response = await fetch("https://cookzzie.up.railway.app/users/signup", {
         method: "POST",
         body: JSON.stringify(newData),
         headers: {
