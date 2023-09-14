@@ -17,10 +17,14 @@ export default function NavBar() {
     "access_token"
   ]);
 
+  const Username = window.localStorage.getItem('username')
+
   const logout = () =>{
+ alert(`Hey ${Username} You want to leave from Cookzzie Application 🥺`)
     setCookies("access_token","");
-    window.localStorage.removeItem("access-token");
-    window.localStorage.removeItem("userID");
+    window.localStorage.removeItem("access_token");
+    window.localStorage.removeItem("userId");
+    window.localStorage.removeItem("username");
     history.push('/')
   }
   return (

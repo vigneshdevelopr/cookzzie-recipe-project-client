@@ -44,9 +44,11 @@ setLoad(true)
         setCookies("access_token", data.token);
         window.localStorage.setItem("access_token", data.token);
         window.localStorage.setItem("userId", data.userID);
+        window.localStorage.setItem("username", data.user);
         alert(`Hey Buddy! Welcome Back, ${data.user} `);
 
-        history.push("/recipes");
+        await history.push("/recipes");
+        window.location.reload();
       } else if (response.status === 401) {
         alert(`Sorry! You Entered Invalid Credentials `);
       } else if (response.status === 404) {

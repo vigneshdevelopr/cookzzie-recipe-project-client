@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
+import { Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup"; 
@@ -7,28 +7,35 @@ import SavedRecipes from "./Pages/Recipes/SavedRecipes";
 import CreateRecipe from "./Pages/Recipes/CreateRecipe";
 import LostPage from "./Pages/LostPage";
 
+const usertoken = localStorage.getItem('access_token');
+
 function App() {
   return (
     <div className="App">
       <Switch>
-        
         <Route exact path="/">
-          <Login />
+           <Login />
         </Route>
         <Route path="/signup">
-          <Signup />
+       <Signup />
         </Route>
-        <Route path="/recipes">
-          <Recipes />
-        </Route>
-        <Route path="/saved">
-          <SavedRecipes />
-        </Route>
-        <Route path="/create">
-          <CreateRecipe />
-        </Route>
+        {usertoken ? (
+          <>
+            <Route path="/recipes">
+              <Recipes />
+            </Route>
+            <Route path="/saved">
+              <SavedRecipes />
+            </Route>
+            <Route path="/create">
+              <CreateRecipe />
+            </Route>
+          </>
+        ):(
+          <Redirect to="/" />
+        )}
         <Route path="**">
-          <LostPage />
+    <LostPage /> 
         </Route>
       </Switch>
     </div>
