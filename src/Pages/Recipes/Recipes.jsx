@@ -47,7 +47,7 @@ function Recipes() {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const response = await axios.get("https://cookzzie.up.railway.app/recipes");
+        const response = await axios.get("https://github.com/vigneshdevelopr/cookzzie-recipe-project-client/recipes");
         const getRecipes = response.data
         setRecipes((prevRecipes) => [...prevRecipes, ...getRecipes]);
 
