@@ -32,7 +32,7 @@ function SavedRecipes() {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `https://cookzzie.up.railway.app/recipes/saved/${userId}`
+          `https://cookzzie-server.onrender.com/recipes/saved/${userId}`
         );
         console.log(response.data); // Check the response data from the server
 
@@ -65,7 +65,7 @@ function SavedRecipes() {
   const handleRemove = async(productId)=>{
 try {
   const response = await axios.delete(
-    `https://cookzzie.up.railway.app/recipes/savedRecipes/${userId}/${productId}`
+    `https://cookzzie-server.onrender.com/recipes/savedRecipes/${userId}/${productId}`
   );
   setSavedRecipes((prevCart) => prevCart.filter((item) => item._id !== productId));
   console.log(response);
