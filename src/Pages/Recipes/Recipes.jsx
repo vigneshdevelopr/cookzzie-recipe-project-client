@@ -61,7 +61,7 @@ function Recipes() {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `https://cookzzie.up.railway.app/recipes/saved/id/${userId}`
+          `https://github.com/vigneshdevelopr/cookzzie-recipe-project-client/recipes/saved/id/${userId}`
         );
         setSavedRecipes(response.data.savedRecipes);
         console.log(savedRecipes)
@@ -77,7 +77,7 @@ function Recipes() {
   //savedRecipe:
   const savedRecipe = async (recipeId) => {
     try {
-      const response = await axios.put("https://cookzzie.up.railway.app/recipes/saved", {
+      const response = await axios.put("https://github.com/vigneshdevelopr/cookzzie-recipe-project-client/recipes/saved", {
         recipeId,
         userId,
       });
